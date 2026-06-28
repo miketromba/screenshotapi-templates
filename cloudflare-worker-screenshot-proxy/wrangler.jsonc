@@ -1,0 +1,14 @@
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "screenshotapi-worker-proxy",
+	"main": "src/index.ts",
+	"compatibility_date": "2026-06-01",
+	"observability": {
+		"enabled": true
+	},
+	"vars": {
+		"SCREENSHOTAPI_BASE_URL": "https://screenshotapi.to",
+		"SCREENSHOTAPI_MOCK_MODE": "false",
+		"CACHE_TTL_SECONDS": "300"
+	}
+}

@@ -1,0 +1,10 @@
+[project]
+name = "python-scheduled-screenshot-archiver"
+version = "0.1.0"
+description = "Cron-friendly ScreenshotAPI archiver"
+requires-python = ">=3.7"
+dependencies = []
+
+[tool.pyright]
+pythonVersion = "3.7"
+typeCheckingMode = "strict"

@@ -1,0 +1,24 @@
+{
+	"name": "screenshotapi-templates",
+	"private": true,
+	"packageManager": "bun@1.3.11",
+	"workspaces": [
+		"nextjs-screenshot-tool",
+		"cloudflare-worker-screenshot-proxy",
+		"vercel-og-image-automation",
+		"github-actions-visual-snapshot",
+		"node-batch-screenshot-worker"
+	],
+	"scripts": {
+		"lint": "biome check .",
+		"format": "biome check --write .",
+		"validate:metadata": "bun scripts/validate-metadata.ts",
+		"validate": "bun run lint && bun run validate:metadata",
+		"typecheck": "cd nextjs-screenshot-tool && bun run typecheck && cd ../cloudflare-worker-screenshot-proxy && bun run typecheck && cd ../vercel-og-image-automation && bun run typecheck && cd ../github-actions-visual-snapshot && bun run typecheck && cd ../node-batch-screenshot-worker && bun run typecheck",
+		"build": "cd nextjs-screenshot-tool && bun run build && cd ../cloudflare-worker-screenshot-proxy && bun run build && cd ../vercel-og-image-automation && bun run build && cd ../github-actions-visual-snapshot && bun run build && cd ../node-batch-screenshot-worker && bun run build",
+		"smoke": "cd nextjs-screenshot-tool && bun run smoke && cd ../cloudflare-worker-screenshot-proxy && bun run smoke && cd ../vercel-og-image-automation && bun run smoke && cd ../github-actions-visual-snapshot && bun run smoke && cd ../node-batch-screenshot-worker && bun run smoke && cd ../python-scheduled-screenshot-archiver && python3 -m py_compile archive.py && python3 archive.py --dry-run --targets targets.example.json --out sample-output"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "2.4.8"
+	}
+}

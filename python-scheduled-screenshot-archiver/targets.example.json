@@ -1,0 +1,17 @@
+[
+	{
+		"name": "example-home",
+		"url": "https://example.com",
+		"width": 1280,
+		"height": 720,
+		"format": "png"
+	},
+	{
+		"name": "example-mobile",
+		"url": "https://example.com",
+		"width": 390,
+		"height": 844,
+		"format": "webp",
+		"fullPage": true
+	}
+]

@@ -1,0 +1,14 @@
+{
+	"defaults": {
+		"width": 1440,
+		"height": 900,
+		"thresholdPercent": 0.5
+	},
+	"pages": [
+		{
+			"name": "homepage",
+			"baselineUrl": "https://example.com",
+			"candidateUrl": "https://example.com"
+		}
+	]
+}

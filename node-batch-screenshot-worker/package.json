@@ -1,0 +1,17 @@
+{
+	"name": "node-batch-screenshot-worker",
+	"version": "0.1.0",
+	"private": true,
+	"type": "module",
+	"packageManager": "bun@1.3.11",
+	"scripts": {
+		"start": "bun src/index.ts",
+		"build": "bun build src/index.ts --target=node --outdir dist",
+		"typecheck": "tsc --noEmit",
+		"smoke": "SCREENSHOTAPI_DRY_RUN=true bun src/index.ts --targets targets.example.json --out sample-output --concurrency 2"
+	},
+	"devDependencies": {
+		"@types/node": "^20",
+		"typescript": "^5"
+	}
+}

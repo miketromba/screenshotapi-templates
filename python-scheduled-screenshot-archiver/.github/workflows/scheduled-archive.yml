@@ -1,0 +1,31 @@
+name: Scheduled screenshot archive
+
+on:
+  schedule:
+    - cron: "17 6 * * *"
+  workflow_dispatch:
+
+jobs:
+  archive:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Run archive
+        env:
+          SCREENSHOTAPI_KEY: ${{ secrets.SCREENSHOTAPI_KEY }}
+          SCREENSHOTAPI_BASE_URL: https://screenshotapi.to
+        run: python archive.py --targets targets.json --out archives
+
+      - name: Upload archive
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: screenshot-archive
+          path: archives

@@ -1,0 +1,22 @@
+{
+	"name": "github-actions-visual-snapshot",
+	"version": "0.1.0",
+	"private": true,
+	"type": "module",
+	"packageManager": "bun@1.3.11",
+	"scripts": {
+		"snapshot": "bun scripts/visual-snapshot.ts",
+		"build": "bun build scripts/visual-snapshot.ts --target=node --outdir dist",
+		"typecheck": "tsc --noEmit",
+		"smoke": "SCREENSHOTAPI_MOCK_MODE=true bun run snapshot -- --config visual-snapshot.config.json --out artifacts"
+	},
+	"dependencies": {
+		"pixelmatch": "^7.1.0",
+		"pngjs": "^7.0.0"
+	},
+	"devDependencies": {
+		"@types/node": "^20",
+		"@types/pngjs": "^6.0.5",
+		"typescript": "^5"
+	}
+}

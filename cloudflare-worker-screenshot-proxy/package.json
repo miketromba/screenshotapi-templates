@@ -1,0 +1,22 @@
+{
+	"name": "cloudflare-worker-screenshot-proxy",
+	"version": "0.1.0",
+	"private": true,
+	"type": "module",
+	"packageManager": "bun@1.3.11",
+	"scripts": {
+		"dev": "wrangler dev",
+		"build": "bun build src/index.ts --target=browser --outdir dist",
+		"deploy": "wrangler deploy",
+		"typecheck": "tsc --noEmit",
+		"smoke": "bun scripts/smoke.ts"
+	},
+	"engines": {
+		"node": ">=22.0.0"
+	},
+	"devDependencies": {
+		"@cloudflare/workers-types": "^4.20260620.0",
+		"typescript": "^5",
+		"wrangler": "^4.53.0"
+	}
+}
