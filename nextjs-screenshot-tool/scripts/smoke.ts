@@ -1,8 +1,10 @@
 import { mkdir, writeFile } from 'node:fs/promises'
-import { join } from 'node:path'
+import { dirname, join } from 'node:path'
+import { fileURLToPath } from 'node:url'
 import { captureScreenshot } from '../src/screenshot'
 
-const outputDir = join(import.meta.dir, '..', 'sample-output')
+const scriptDir = dirname(fileURLToPath(import.meta.url))
+const outputDir = join(scriptDir, '..', 'sample-output')
 const outputPath = join(outputDir, 'mock-screenshot.svg')
 
 const result = await captureScreenshot(
