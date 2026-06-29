@@ -1,8 +1,13 @@
 name: Scheduled screenshot archive
 
+# Disabled by default so a freshly-cloned template does not fail on a schedule
+# before it is configured. To enable scheduled archiving:
+#   1. Add a SCREENSHOTAPI_KEY repository secret (Settings -> Secrets -> Actions).
+#   2. Copy targets.example.json to targets.json and edit it.
+#   3. Uncomment the `schedule` trigger below.
 on:
-  schedule:
-    - cron: "17 6 * * *"
+  # schedule:
+  #   - cron: "17 6 * * *"
   workflow_dispatch:
 
 jobs:
@@ -16,6 +21,19 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
+
+      - name: Verify configuration
+        env:
+          SCREENSHOTAPI_KEY: ${{ secrets.SCREENSHOTAPI_KEY }}
+        run: |
+          if [ -z "$SCREENSHOTAPI_KEY" ]; then
+            echo "::error::SCREENSHOTAPI_KEY secret is not set. Add it in repository settings before running this workflow."
+            exit 1
+          fi
+          if [ ! -f targets.json ]; then
+            echo "::error::targets.json not found. Copy targets.example.json to targets.json and edit it before running this workflow."
+            exit 1
+          fi
 
       - name: Run archive
         env:

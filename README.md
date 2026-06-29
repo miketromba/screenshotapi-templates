@@ -11,12 +11,12 @@ Get an API key:
 
 | Template | Public repo | Use case | Local verification |
 | --- | --- | --- | --- |
-| `nextjs-screenshot-tool` | `miketromba/screenshotapi-template-nextjs-screenshot-tool` | Hosted form that captures a URL and previews the image | `bun run build && bun run smoke` |
-| `cloudflare-worker-screenshot-proxy` | `miketromba/screenshotapi-template-cloudflare-worker-proxy` | Edge proxy with URL validation and cache headers | `bun run build && bun run smoke` |
-| `vercel-og-image-automation` | `miketromba/screenshotapi-template-vercel-og-image-automation` | Dynamic OG image route backed by ScreenshotAPI | `bun run build && bun run smoke` |
-| `github-actions-visual-snapshot` | `miketromba/screenshotapi-template-github-actions-visual-snapshot` | CI workflow for visual snapshots and diff artifacts | `bun run smoke` |
-| `node-batch-screenshot-worker` | `miketromba/screenshotapi-template-node-batch-worker` | Concurrent batch screenshot CLI for queues or jobs | `bun run smoke` |
-| `python-scheduled-screenshot-archiver` | `miketromba/screenshotapi-template-python-scheduled-archiver` | Cron-friendly screenshot archive script | `python3 archive.py --dry-run --targets targets.example.json --out sample-output` |
+| `nextjs-screenshot-tool` | [miketromba/screenshotapi-template-nextjs-screenshot-tool](https://github.com/miketromba/screenshotapi-template-nextjs-screenshot-tool) | Hosted form that captures a URL and previews the image | `bun run build && bun run smoke` |
+| `cloudflare-worker-screenshot-proxy` | [miketromba/screenshotapi-template-cloudflare-worker-proxy](https://github.com/miketromba/screenshotapi-template-cloudflare-worker-proxy) | Edge proxy with URL validation and cache headers | `bun run build && bun run smoke` |
+| `vercel-og-image-automation` | [miketromba/screenshotapi-template-vercel-og-image-automation](https://github.com/miketromba/screenshotapi-template-vercel-og-image-automation) | Dynamic OG image route backed by ScreenshotAPI | `bun run build && bun run smoke` |
+| `github-actions-visual-snapshot` | [miketromba/screenshotapi-template-github-actions-visual-snapshot](https://github.com/miketromba/screenshotapi-template-github-actions-visual-snapshot) | CI workflow for visual snapshots and diff artifacts | `bun run smoke` |
+| `node-batch-screenshot-worker` | [miketromba/screenshotapi-template-node-batch-worker](https://github.com/miketromba/screenshotapi-template-node-batch-worker) | Concurrent batch screenshot CLI for queues or jobs | `bun run smoke` |
+| `python-scheduled-screenshot-archiver` | [miketromba/screenshotapi-template-python-scheduled-archiver](https://github.com/miketromba/screenshotapi-template-python-scheduled-archiver) | Cron-friendly screenshot archive script | `python3 archive.py --dry-run --targets targets.example.json --out sample-output` |
 
 ## Validate
 
