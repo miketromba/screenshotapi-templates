@@ -20,7 +20,10 @@ jobs:
           python-version: "3.11"
 
       - run: bun install --frozen-lockfile
-      - run: bun run validate
+      # Biome lint is a monorepo-dev concern (templates/biome.json is a nested
+      # config); standalone CI validates metadata, types, build, and smoke —
+      # matching the individual template repos' CI scope.
+      - run: bun run validate:metadata
       - run: bun run typecheck
       - run: bun run build
       - run: bun run smoke
